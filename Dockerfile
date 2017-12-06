@@ -8,7 +8,8 @@ RUN yum install -y gcc glibc-devel make ncurses-devel openssl-devel xmlto perl w
     yum install -y tar && \
     yum install -y xz && \
     wget http://www.erlang.org/download/otp_src_18.3.tar.gz && \
-    tar -xzvf otp_src_18.3.tar.gz
+    tar -xzvf otp_src_18.3.tar.gz && \
+    rm -f otp_src_18.3.tar.gz
 
 WORKDIR /usr/local/otp_src_18.3
 
@@ -23,7 +24,9 @@ WORKDIR /home
 RUN wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.1/rabbitmq-server-generic-unix-3.6.1.tar.xz && \
     xz -d rabbitmq-server-generic-unix-3.6.1.tar.xz && \
     tar -xvf rabbitmq-server-generic-unix-3.6.1.tar && \  
-    mv rabbitmq_server-3.6.1/ rabbitmq
+    mv rabbitmq_server-3.6.1/ rabbitmq && \
+    rm -f rabbitmq-server-generic-unix-3.6.1.tar && \
+    yum clean all
 
 ENV RABBITMQ_HOME /home/rabbitmq
 ENV PATH $PATH:$RABBITMQ_HOME/sbin
