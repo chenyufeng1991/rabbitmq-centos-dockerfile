@@ -3,13 +3,13 @@ MAINTAINER chenyufeng "yufengcode@gmail.com"
 
 WORKDIR /usr/local
 
-RUN yum install -y gcc glibc-devel make ncurses-devel openssl-devel xmlto perl wget && \
+RUN yum install -y gcc glibc-devel make ncurses-devel openssl-devel xmlto perl wget xz lsof && \
     rpm --rebuilddb && \
     yum install -y tar && \
-    yum install -y xz && \
     wget http://www.erlang.org/download/otp_src_18.3.tar.gz && \
     tar -xzvf otp_src_18.3.tar.gz && \
-    rm -f otp_src_18.3.tar.gz
+    rm -f otp_src_18.3.tar.gz && \
+    yum clean all
 
 WORKDIR /usr/local/otp_src_18.3
 
