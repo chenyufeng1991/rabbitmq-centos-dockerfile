@@ -31,8 +31,7 @@ RUN wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.1/rabbitmq-server
 ENV RABBITMQ_HOME /home/rabbitmq
 ENV PATH $PATH:$RABBITMQ_HOME/sbin
 
-EXPOSE 5672
-EXPOSE 15672
+EXPOSE 5672 15672
 
 ENTRYPOINT rabbitmq-plugins enable rabbitmq_management && rabbitmq-server
 
