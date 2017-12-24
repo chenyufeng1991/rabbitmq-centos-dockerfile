@@ -1,4 +1,4 @@
-FROM centos:6.7
+FROM centos:6
 MAINTAINER chenyufeng "yufengcode@gmail.com"
 
 WORKDIR /usr/local
