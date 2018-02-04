@@ -1,2 +1,2 @@
 # rabbitmq-centos-dockerfile
-RabbitMQ在centos6.7上的镜像。
+RabbitMQ在centos6上的镜像。推荐使用centos6来作为基础镜像，比较稳定，暂时没有什么问题。并且在基于centos6上的各种漏洞都会进行修复。
